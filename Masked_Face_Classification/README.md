@@ -56,12 +56,16 @@ Run the notebook on prepared environment. Each notebook can be run independently
 
 ## References
 - Cabani, A., Hammoudi, K., Benhabiles, H., &amp; Melkemi, M. (2020). MaskedFace-Net – A dataset of correctly/incorrectly masked face images in the context of COVID-19. Smart Health, 19, 100144. https://doi.org/10.1016/j.smhl.2020.100144
+- Hammoudi, K., Cabani, A., Benhabiles, H., &amp; Melkemi, M. (2020). Validating the correct wearing of protection mask by taking a selfie: design of a mobile application "CheckYourMask" to limit the spread of COVID-19. Computer Modeling in Engineering &amp; Sciences, 124(3), 1049–1059. https://doi.org/10.32604/cmes.2020.011663
 - Howard, A. G., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., &amp; Adam, H. (2017, April 17). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. arXiv.org. https://arxiv.org/abs/1704.04861
 - Karras, T., Laine, S., &amp; Aila, T. (2019, February 6). A Style-Based Generator Architecture for Generative Adversarial Networks. arXiv.org. https://arxiv.org/abs/1812.04948
 
 - [https://towardsdatascience.com/transfer-learning-using-mobilenet-and-keras-c75daf7ff299](https://towardsdatascience.com/transfer-learning-using-mobilenet-and-keras-c75daf7ff299)
 
 ## Licenses
+The [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) is under the license of [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). We also refer the first 2 papers for using this dataset as stated in its [README.md file](https://github.com/cabani/MaskedFace-Net/blob/master/README.md).
+
+The [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) is also made available under the [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. We also refer the paper by Tero Karras, Samuli Laine, Timo Aila for using this dataset as stated in its [README.md file](https://github.com/NVlabs/ffhq-dataset/blob/master/README.md).
 
 ## Contributors
 - [Kc-codetalker](https://github.com/Kc-codetalker)

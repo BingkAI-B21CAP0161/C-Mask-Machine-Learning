@@ -32,7 +32,7 @@ We then tried creating custom `CNN` model in hope having a better performance. I
 For __object detection__, we tried `transfer learning` using [Mask R-CNN by Matterport](https://github.com/matterport/Mask_RCNN) and use [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection). This `Mask R-CNN` architecture library already provides functions to create `Dataset` object, create `Config` for the model, as well as training and evaluating the model. We refer [a tutorial by Jason Brownlee](https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/) for learning to use the library.
 
 ### Latest Datasets and Models used
-The latest model used for C-Mask __classification__ is`model_cnn_scenario_6`, trained using combined 2nd and 3rd datasets on custom `CNN` model for 50 epochs. The latest model used for C-Mask __object detection__ is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs.
+The latest model used for C-Mask __classification__ is `model_cnn_scenario_6`, trained using combined 2nd and 3rd datasets on custom `CNN` model for 50 epochs. The latest model used for C-Mask __object detection__ is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs.
 
 ## Getting Started
 ### Prerequisites
@@ -47,6 +47,7 @@ Run the notebook on prepared environment. Each notebook can be run independently
 
 ## References
 - Cabani, A., Hammoudi, K., Benhabiles, H., &amp; Melkemi, M. (2020). MaskedFace-Net – A dataset of correctly/incorrectly masked face images in the context of COVID-19. Smart Health, 19, 100144. https://doi.org/10.1016/j.smhl.2020.100144
+- Hammoudi, K., Cabani, A., Benhabiles, H., &amp; Melkemi, M. (2020). Validating the correct wearing of protection mask by taking a selfie: design of a mobile application "CheckYourMask" to limit the spread of COVID-19. Computer Modeling in Engineering &amp; Sciences, 124(3), 1049–1059. https://doi.org/10.32604/cmes.2020.011663
 - He, K., Gkioxari, G., Dollár, P., &amp; Girshick, R. (2018, January 24). Mask R-CNN. arXiv.org. https://arxiv.org/abs/1703.06870
 - Howard, A. G., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., Andreetto, M., &amp; Adam, H. (2017, April 17). MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications. arXiv.org. https://arxiv.org/abs/1704.04861
 - Karras, T., Laine, S., &amp; Aila, T. (2019, February 6). A Style-Based Generator Architecture for Generative Adversarial Networks. arXiv.org. https://arxiv.org/abs/1812.04948
@@ -58,6 +59,30 @@ Run the notebook on prepared environment. Each notebook can be run independently
 - [https://towardsdatascience.com/transfer-learning-using-mobilenet-and-keras-c75daf7ff299](https://towardsdatascience.com/transfer-learning-using-mobilenet-and-keras-c75daf7ff299)
 
 ## Licenses
+The [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) is under the license of [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). We also refer the first 2 papers for using this dataset as stated in its [README.md file](https://github.com/cabani/MaskedFace-Net/blob/master/README.md).
+
+The [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) is also made available under the [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. We also refer the paper by Tero Karras, Samuli Laine, Timo Aila for using this dataset as stated in its [README.md file](https://github.com/NVlabs/ffhq-dataset/blob/master/README.md).
+
+For the object detection feature, the [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) uses [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) license. The dataset can be cited using this BibTeX.
+```
+@misc{make ml,
+title={Mask Dataset},
+url={https://makeml.app/datasets/mask},
+journal={Make ML}
+}
+```
+
+The [Mask R-CNN](https://github.com/matterport/Mask_RCNN) library can be cited using this BibTeX.
+```
+@misc{matterport_maskrcnn_2017,
+  title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
+  author={Waleed Abdulla},
+  year={2017},
+  publisher={Github},
+  journal={GitHub repository},
+  howpublished={\url{https://github.com/matterport/Mask_RCNN}},
+}
+```
 
 ## Contributors
 - [Kc-codetalker](https://github.com/Kc-codetalker)

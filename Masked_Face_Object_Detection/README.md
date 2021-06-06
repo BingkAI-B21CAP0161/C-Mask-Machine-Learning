@@ -53,6 +53,26 @@ Run the notebook on prepared environment. Each notebook can be run independently
 - [https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/](https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/)
 
 ## Licenses
+The [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) uses [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) license. The dataset can be cited using this BibTeX.
+```
+@misc{make ml,
+title={Mask Dataset},
+url={https://makeml.app/datasets/mask},
+journal={Make ML}
+}
+```
+
+The [Mask R-CNN](https://github.com/matterport/Mask_RCNN) library can be cited using this BibTeX.
+```
+@misc{matterport_maskrcnn_2017,
+  title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
+  author={Waleed Abdulla},
+  year={2017},
+  publisher={Github},
+  journal={GitHub repository},
+  howpublished={\url{https://github.com/matterport/Mask_RCNN}},
+}
+```
 
 ## Contributors
 - [Kc-codetalker](https://github.com/Kc-codetalker)

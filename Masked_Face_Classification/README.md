@@ -1,7 +1,7 @@
 # Face Classification
 
 ## Overview
-Latest version of our face classification is done by using custom `CNN` model. It receives `RGB` (3 channels) images and predict the label. The output is binary (`with mask` or `without mask`). Previous versions includes using `MobileNetV2`, `MobileNetV3Large`, and also multi-class dataset.
+Latest version of our face classification is done by using transfer learning methods using pre-trained model MobileNetV2. It receives `RGB` images with shape (224, 224, 3) and predict the label. The output is categorical whic are 5 classes such as `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. Previous versions includes using `MobileNetV2`, `MobileNetV3Large`, and also multi-class dataset.
 
 ## Directories Stucture
 There are `Preprocessing`, `Modelling`, and `Saved_Models` subdirectories.
@@ -26,10 +26,12 @@ After facing overfitting, due to the dataset only contains single variant of mas
 ### Model History
 We first tried `transfer learning` using MobileNet. We tried `MobileNetV2` and `MobileNetV3Large` with various scenarios. All of them overfits on the training and fails to predict new images correctly. The most frequent problem we found is the training and validation `accuracy` and `loss` are high on training, but when we evaluate afterward the model predicts all images as the same label, even on training and validation datasets.
 
-We then tried creating custom `CNN` model in hope having a better performance. It did much better than previous MobileNets, as it didn't fall into overfitting. But as the first dataset only contains images with uniform generated masks, it failed to predict random mask faces. When we use 2nd and 3rd datasets, we gain improvement on predictions on new images.
+We then tried creating custom `CNN` model in hope having a better performance. It did much better than previous MobileNets, as it didn't fall into overfitting. But as the first dataset only contains images with uniform generated masks, it failed to predict random mask faces. When we use 2nd and 3rd datasets, we gain improvement on predictions on new images. But, for this scenario, the model can only classifying two classes which are `correctly masked` and `no mask` classes.
+
+For the last trial, we decided to try make a model that can classify 5 classes. These classes are divided to be `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. For this scenario, we used [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and combine with [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset). To obtain a good model then we use transfer learning method using pre-trained model MobileNetV2 and add some layer such as `Conv2D Layer` and `Dropout Layer`. Finally, those layer can bring the model to avoid overfitting and obtain good accuracy for training, validation, and testing. This model also can classify all 5 classes.
 
 ### Latest Datasets and Models used
-The latest model used is `model_cnn_scenario_6`, trained using combined [2nd](https://www.kaggle.com/omkargurav/face-mask-dataset) and [3rd](https://www.kaggle.com/prithwirajmitra/covid-face-mask-detection-dataset) datasets on custom `CNN` model for 50 epochs.
+The latest model used for classification is `MobileNetV2_retrain_best_model.h5`, trained using combined [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) for 8 epochs.
 
 ## Flow of Program
 Training

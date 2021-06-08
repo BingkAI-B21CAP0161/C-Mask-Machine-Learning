@@ -11,10 +11,9 @@ C-Mask is an app that can detect whether people are wearing masks correctly. The
 Face classification is done by using custom `CNN` model. The output is binary label prediction. Faces object detection is done by using `Mask R-CNN` architecture. The output of inferences is a list of coordinates for each bounding box and labels for each bounding box. Researches are executed using `Jupyter Notebooks` and `Google Colaboratory`.
 
 ## Project Stucture
-We separate the directories for __Classification__ and __Object Detection__ researches. For each directory, there would be `Preprocessing`, `Modelling`, and `Saved_Models` subdirectories.
+We separate the directories for __Classification__ and __Object Detection__ researches. For each directory, there would be `Preprocessing` and `Modelling` subdirectories.
 1. `Preprocessing` includes notebooks for extracting, preprocessing, and arranging datasets.
 1. `Modelling` includes notebooks for building, training, and evaluating machine learning models.
-1. `Saved_Models` includes saved model files to be used in back-end app.
 
 ## Research History
 ### Dataset History
@@ -29,12 +28,12 @@ For __classification__, we first tried `transfer learning` using MobileNet. We t
 
 We then tried creating custom `CNN` model in hope having a better performance. It did much better than previous MobileNets, as it didn't fall into overfitting. But as the first dataset only contains images with uniform generated masks, it failed to predict random mask faces. When we use 2nd and 3rd datasets, we gain improvement on predictions on new images. But, for this scenario, the model can only classifying two classes which are `correctly masked` and `no mask` classes.
 
-For the last trial, we decided to try make a model that can classify 5 classes. These classes are divided to be `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. For this scenario, we used [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and combine with [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset). To obtain a good model then we use transfer learning method using pre-trained model MobileNetV2 and add some layer such as `Conv2D Layer` and `Dropout Layer`. Finally, those layer can bring the model to avoid overfitting and obtain good accuracy for training, validation, and testing. This model also can classify all 5 classes.
+For the last trial, we decided to try make a model that can classify 5 classes. These classes are divided to be `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. For this scenario, we used [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and combine with [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset). To obtain a good model then we use transfer learning method using pre-trained model MobileNetV2 and add some layer such as `Conv2D Layer` and `Dropout Layer`. Finally, those layer can bring the model to avoid previous overfitting and obtain good accuracy for training, validation, and testing. This model also can classify all 5 classes.
 
 For __object detection__, we tried `transfer learning` using [Mask R-CNN by Matterport](https://github.com/matterport/Mask_RCNN) and use [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection). This `Mask R-CNN` architecture library already provides functions to create `Dataset` object, create `Config` for the model, as well as training and evaluating the model. We refer [a tutorial by Jason Brownlee](https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/) for learning to use the library.
 
 ### Latest Datasets and Models used
-The latest model used for C-Mask __classification__ is `MobileNetV2_retrain_best_model.h5`, trained using combined [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) for 8 epochs. The latest model used for C-Mask __object detection__ is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs.
+The latest model used for C-Mask __classification__ is `MobileNetV2_retrain_best_model.h5`, trained using combined [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) for 8 epochs. The latest model used for C-Mask __object detection__ is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs. They can be found in the `v1.0.0` release.
 
 ## Getting Started
 ### Prerequisites

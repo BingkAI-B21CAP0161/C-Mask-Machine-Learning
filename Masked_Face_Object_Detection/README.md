@@ -4,11 +4,10 @@
 Latest version of our faces object detection is done by using `Mask R-CNN` architecture. `Mask R-CNN` is one of the latest addition to the `R-CNN` family, extending `Faster R-CNN`, one of the __fastest__ R-CNN models. The output of inferences is a list of coordinates for each bounding box and labels for each bounding box. It receives `RGB` (3 channels) images and predict the labels and coordinates.
 
 ## Directories Stucture
-There are `Modelling`, and `Saved_Models` subdirectories.
+There is `Modelling` subdirectory.
 1. `Modelling` includes notebooks for building, training, and evaluating machine learning models.
     1. [`Example_Mask_R-CNN_Object_Detection_Kangaroo.ipynb`](./Modelling/Example_Mask_R-CNN_Object_Detection_Kangaroo.ipynb) includes codes from [a tutorial by Jason Brownlee](https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/) to try object detection using [Mask R-CNN by Matterport](https://github.com/matterport/Mask_RCNN). We used [Kangaroo dataset for object detection](https://github.com/experiencor/kangaroo) here as used in aforementioned tutorial.
     1. [`Mask_R_CNN_Object_Detection.ipynb`](./Modelling/Mask_R_CNN_Object_Detection.ipynb) includes codes from previous notebook, but with modifications for [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) and some refactoring to achieve `clean code`.
-1. `Saved_Models` includes saved model files to be used in back-end app.
 
 ## Research History
 ### Dataset History
@@ -18,7 +17,7 @@ We use [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-
 We tried `transfer learning` using [Mask R-CNN by Matterport](https://github.com/matterport/Mask_RCNN) and use [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection). This `Mask R-CNN` architecture library already provides functions to create `Dataset` object, create `Config` for the model, as well as training and evaluating the model. We refer [a tutorial by Jason Brownlee](https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/) for learning to use the library.
 
 ### Latest Datasets and Models used
-The latest model used is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs.
+The latest model used is `face_mask_detection_config_50_epoch_128_steps`, trained using [face mask detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection) on `Mask R-CNN` model for 50 epochs. It can be found in the `v1.0.0` release.
 
 ## Flow of Program
 Training

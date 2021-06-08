@@ -4,7 +4,7 @@
 Latest version of our face classification is done by using transfer learning methods using pre-trained model MobileNetV2. It receives `RGB` images with shape (224, 224, 3) and predict the label. The output is categorical whic are 5 classes such as `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. Previous versions includes using `MobileNetV2`, `MobileNetV3Large`, and also multi-class dataset.
 
 ## Directories Stucture
-There are `Preprocessing`, `Modelling`, and `Saved_Models` subdirectories.
+There are `Preprocessing` and `Modelling` subdirectories.
 1. `Preprocessing` includes notebooks for extracting, preprocessing, and arranging datasets.
     1. [`Extract_Dataset.ipynb`](./Preprocessing/Extract_Dataset.ipynb) includes codes to extract [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and also combining [2nd](https://www.kaggle.com/omkargurav/face-mask-dataset) and [3rd](https://www.kaggle.com/prithwirajmitra/covid-face-mask-detection-dataset) datasets.
     1. [`arrange_CMFD_dataset.ipynb`](./Preprocessing/arrange_CMFD_dataset.ipynb),
@@ -15,7 +15,6 @@ There are `Preprocessing`, `Modelling`, and `Saved_Models` subdirectories.
     1. [`MobileNet_without_retrain.ipynb`](./Modelling/MobileNet_without_retrain.ipynb) includes codes to use `MobileNetV3Large` for transfer learning without retraining MobileNetV3Large's weights.
     1. [`MobileNetV2_retrain.ipynb`](./Modelling/MobileNetV2_retrain.ipynb) includes codes to use `MobilenetV2` for transfer learning.
     1. [`MobileNetV3_retrain.ipynb`](./Modelling/MobileNetV3_retrain.ipynb) includes codes to use `MobileNetV3Large` for transfer learning with various scenarios of retrain and dataset.
-1. `Saved_Models` includes saved model files to be used in back-end app.
 
 ## Research History
 ### Dataset History
@@ -31,7 +30,7 @@ We then tried creating custom `CNN` model in hope having a better performance. I
 For the last trial, we decided to try make a model that can classify 5 classes. These classes are divided to be `correctly masked`, `no mask`, `uncovered chin`, `uncovered nose`, and `uncovered nose and mouth`. For this scenario, we used [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and combine with [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset). To obtain a good model then we use transfer learning method using pre-trained model MobileNetV2 and add some layer such as `Conv2D Layer` and `Dropout Layer`. Finally, those layer can bring the model to avoid overfitting and obtain good accuracy for training, validation, and testing. This model also can classify all 5 classes.
 
 ### Latest Datasets and Models used
-The latest model used for classification is `MobileNetV2_retrain_best_model.h5`, trained using combined [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) for 8 epochs.
+The latest model used for classification is `MobileNetV2_retrain_best_model.h5`, trained using combined [MaskedFace-Net dataset](https://github.com/cabani/MaskedFace-Net) and [Flickr Faces HQ dataset](https://github.com/NVlabs/ffhq-dataset) for 8 epochs. It can be found in the `v1.0.0` release.
 
 ## Flow of Program
 Training
